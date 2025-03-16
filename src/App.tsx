@@ -2,8 +2,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/common/layout/layout";
 import { lazy, Suspense } from "react";
 import { StoreProvider } from "./context";
+import Payment from "./components/pages/payment/payment";
 const Home = lazy(() => import("./components/pages/home/home"));
 const Cart = lazy(() => import("./components/pages/cart/cart"));
+
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +18,7 @@ function App() {
               <Route path="cart" element={<Cart />} />
               <Route path="favorites" element={<div>favorites</div>} />
               <Route path="notifications" element={<div>notifications</div>} />
+              <Route path="payment" element={<Payment />} />
             </Route>
           </Routes>
         </StoreProvider>

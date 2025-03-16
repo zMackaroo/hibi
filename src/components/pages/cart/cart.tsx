@@ -17,7 +17,8 @@ function Cart() {
 
   const handlePlaceOrder = () => {
     alert("Order placed successfully!");
-    navigate("/");
+    navigate("/payment");
+    window.location.reload();
   };
 
   return (
