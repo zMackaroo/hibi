@@ -6,7 +6,7 @@ import CartFilled from "../../../assets/icons/cart-filled.svg";
 import Favorites from "../../../assets/icons/favorites.svg";
 import FavoritesFilled from "../../../assets/icons/favorites-filled.svg";
 import { NavLink } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Store } from "../../../context";
 const navItems = [
   { name: "home", icon: Home, activeIcon: HomeFilled, path: "/" },
