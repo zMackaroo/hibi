@@ -125,8 +125,8 @@
 
 .floating-cart-button {
   position: fixed;
-  bottom: 1.25rem;
-  right: 1.25rem;
+  bottom: 0.5rem;
+  right: 0.5rem;
   background: #dfc7a4; /* Matching warm caramel tone */
   color: #4a3f35; /* Dark brown for consistency */
   padding: 0.75rem 1rem;

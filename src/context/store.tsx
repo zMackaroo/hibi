@@ -58,10 +58,38 @@ export const initState: any = {
     },
     {
       id: 9,
-      name: "Pink Drink",
+      name: "Tea Infused Strawberry Lemonade",
       description:
-        "A refreshing fusion of sweet strawberries and zesty citrus, perfectly blended for a crisp, light, and effortlessly elegant sip.",
-      price: 125,
+        "A refreshing blend of sweet strawberries, zesty lemon, and soothing tea, perfect for a bright and invigorating drink.",
+      price: 135,
+    },
+    {
+      id: 10,
+      name: "Strawberry Lemonade with Coconut Milk",
+      description:
+        "A creamy and refreshing blend of sweet strawberries, tangy lemon, and smooth coconut milk for a tropical twist on a classic drink.",
+      price: 140,
+    },
+    {
+      id: 11,
+      name: "Bacsilog",
+      description:
+        "A hearty Filipino breakfast featuring crispy bacon, sinaing (slow-cooked rice), and itlog (egg), offering a perfect balance of savory, smoky, and comforting flavors.",
+      price: 105,
+    },
+    {
+      id: 11,
+      name: "Tapsilog",
+      description:
+        "Tapsilog is a classic Filipino breakfast dish featuring tender, marinated beef tapa, garlic fried rice (sinangag), and a fried egg (itlog), served with a side of vinegar for a savory and satisfying meal.",
+      price: 105,
+    },
+    {
+      id: 11,
+      name: "Bangsilog",
+      description:
+        "Bangsilog is a Filipino breakfast favorite featuring crispy fried bangus (milkfish), garlic fried rice (sinangag), and a fried egg (itlog), served with a side of vinegar for a flavorful and hearty meal.",
+      price: 105,
     },
   ],
   cart: [],
