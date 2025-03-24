@@ -15,7 +15,13 @@ function StoreProvider({ children }: { children: ReactNode }) {
 
   const _getAllMenu = async () => {
     const req = await fetch(
-      "https://www.hibi-service.vercel.app/menu/getallmenu"
+      "https://www.hibi-service.vercel.app/menu/getallmenu",
+      {
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
     const res = await req.json();
     dispatch({ type: "UPDATE_MENU", payload: res });

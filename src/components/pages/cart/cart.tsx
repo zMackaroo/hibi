@@ -39,6 +39,7 @@ function Cart() {
       "https://www.hibi-service.vercel.app/order/createOrder",
       {
         method: "POST",
+        mode: "cors",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
