@@ -16,7 +16,7 @@ function Dashboard() {
     _getAllOrders();
   }, []);
 
-  return <div>dashboard</div>;
+  return <div>{orders}</div>;
 }
 
 export default Dashboard;
