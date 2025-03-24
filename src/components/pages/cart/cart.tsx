@@ -15,10 +15,44 @@ function Cart() {
     };
   });
 
-  const handlePlaceOrder = () => {
-    alert("Order placed successfully!");
-    navigate("/payment");
-    window.location.reload();
+  const handlePlaceOrder = async () => {
+    let customerName = prompt("Enter your name");
+    let customerPhone = prompt("Enter your phone number");
+
+    if (!customerName || !customerPhone) {
+      alert("Please enter your name and phone number");
+      return;
+    }
+
+    const orders = {
+      customerName,
+      customerPhone,
+      orders: items,
+      totalPrice: items.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+      ),
+      status: "Pending",
+    };
+
+    const req = await fetch(
+      "https://www.hibi-service.vercel.app/order/createOrder",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orders),
+      }
+    );
+    const res = await req.json();
+
+    if (res) {
+      alert("Order placed successfully!");
+      navigate("/");
+      window.location.reload();
+    }
   };
 
   return (
@@ -65,7 +99,7 @@ function Cart() {
         )}
       </div>
       <button className="place-order-button" onClick={handlePlaceOrder}>
-        Place Order
+        Next
       </button>
     </div>
   );

@@ -1,11 +1,11 @@
 .home {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Ensures child elements stack */
   padding: 1.5rem 1rem;
   gap: 1.25rem;
-  background-color: #faf3e0; /* Soft, warm beige for a calming feel */
+  background-color: #faf3e0;
   font-family: "Inter", sans-serif;
-  position: relative;
+  position: relative; /* Prevents overlap */
 }
 
 .home-heading {
@@ -40,9 +40,15 @@
 }
 
 .home-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Responsive grid */
+  gap: 1rem; /* Adjust spacing */
+  width: 100%; /* Take full width */
+  max-width: 100%; /* Prevents overflow */
+  overflow: hidden; /* Hides any unwanted content */
 }
 
 .home-menu-item {
@@ -155,4 +161,41 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+}
+
+@media (min-width: 1024px) {
+  .home-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 1.5rem; /* Adjust as needed */
+  }
+}
+
+@media (min-width: 1280px) {
+  .home-menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+    gap: 1rem; /* Adjust spacing between items */
+  }
+
+  .floating-cart-button {
+    bottom: 2rem;
+    right: 2rem;
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+  }
+
+  .cart-item-count {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .home-menu {
+    grid-template-columns: repeat(6, 1fr); /* 6 columns */
+    gap: 1rem;
+  }
 }
