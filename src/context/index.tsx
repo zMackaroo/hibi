@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import { initState, storeReducer } from "./store";
+import axios from "axios";
 
 const Store = createContext(initState);
 
@@ -14,18 +15,19 @@ function StoreProvider({ children }: { children: ReactNode }) {
   const [init, setInit] = useState(false);
 
   const _getAllMenu = async () => {
-    const req = await fetch(
-      "https://www.hibi-service.vercel.app/menu/getallmenu",
-      {
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    const res = await req.json();
-    dispatch({ type: "UPDATE_MENU", payload: res });
-    setInit(true);
+    try {
+      const res = await axios.get(
+        "https://hibi-service.vercel.app/api/menu/getAllMenu",
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: false,
+        }
+      );
+      dispatch({ type: "UPDATE_MENU", payload: res.data });
+      setInit(true);
+    } catch (error) {
+      console.error("Frontend API Error:", error);
+    }
   };
 
   useLayoutEffect(() => {

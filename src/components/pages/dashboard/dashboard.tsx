@@ -5,7 +5,7 @@ function Dashboard() {
 
   const _getAllOrders = async () => {
     const req = await fetch(
-      "https://www.hibi-service.vercel.app/order/getallorder",
+      "https://www.hibi-service.vercel.app/api/order/getallorder",
       {
         mode: "cors",
         headers: {

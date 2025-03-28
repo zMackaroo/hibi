@@ -36,7 +36,7 @@ function Cart() {
     };
 
     const req = await fetch(
-      "https://www.hibi-service.vercel.app/order/createOrder",
+      "https://www.hibi-service.vercel.app/api/order/createOrder",
       {
         method: "POST",
         mode: "cors",
